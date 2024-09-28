@@ -4,7 +4,7 @@
         <div class="w-full max-w-md">
             <div class="bg-white shadow-md rounded-lg px-8 py-6">
                 <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Register</h2>
-                <form action="" method="POST">
+                <form action="{{ route('register') }}" method="POST">
                     @csrf
                     <div class="mb-4">
                         <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>

@@ -31,10 +31,21 @@
             class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block"
             aria-labelledby="hs-navbar-example-collapse">
             <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-                <a class="font-medium text-white hover:text-blue-400  focus:outline-none"
-                    href="{{ route('login.page') }}" aria-current="page">Login</a>
-                <a class="font-medium text-white hover:text-blue-400 focus:outline-none focus:text-gray-400"
-                    href="{{ route('register.page') }}"">Register</a>
+                @guest
+                    <a class="font-medium text-white hover:text-black  focus:outline-none" href="{{ route('login.page') }}"
+                        aria-current="page">Login</a>
+                    <a class="font-medium text-white hover:text-black focus:outline-none focus:text-gray-400"
+                        href="{{ route('register.page') }}">Register</a>
+                @else
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit"
+                            class="font-medium text-white hover:text-black focus:outline-none focus:text-gray-400">
+                            Logout
+                        </button>
+                    </form>
+                @endguest
+
             </div>
         </div>
     </nav>
