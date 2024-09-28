@@ -10,29 +10,38 @@
                         <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
                         <input type="text" id="name" name="name"
                             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required>
+                            value="{{ old('name') }}">
+                        @error('name')
+                            <p class="text-red-400">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="mb-4">
                         <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
                         <input type="email" id="email" name="email"
                             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required>
+                            value="{{ old('email') }}">
+                        @error('email')
+                            <p class="text-red-400">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="mb-4">
                         <label for="role" class="block text-gray-700 text-sm font-bold mb-2">Role</label>
                         <select id="role" name="role"
                             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <option value="" selected disabled>Select your role</option>
-                            <option value="recruiter">Recruiter</option>
-                            <option value="talent">Talent</option>
+                            <option value="" {{ old('role') == '' ? 'selected' : '' }} disabled>Select your role</option>
+                            <option value="recruiter" {{ old('role') == 'recruiter' ? 'selected' : '' }}>Recruiter</option>
+                            <option value="talent" {{ old('role') == 'talent' ? 'selected' : '' }}>Talent</option>
                         </select>
+                        @error('role')
+                            <p class="text-red-400">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="mb-4">
                         <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
                         <div class="relative">
                             <input type="password" id="password" name="password"
                                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                required>
+                                value="{{ old('password') }}">
                             <button type="button"
                                 data-hs-toggle-password='{
                                 "target": "#password"
@@ -59,14 +68,16 @@
                                 </svg>
                             </button>
                         </div>
+                        @error('password')
+                            <p class="text-red-400">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="mb-6">
                         <label for="password_confirmation" class="block text-gray-700 text-sm font-bold mb-2">Confirm
                             Password</label>
                         <div class="relative">
                             <input type="password" id="password_confirmation" name="password_confirmation"
-                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                required>
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                             <button type="button"
                                 data-hs-toggle-password='{
                                 "target": "#password_confirmation"
@@ -93,6 +104,9 @@
                                 </svg>
                             </button>
                         </div>
+                        @error('password')
+                            <p class="text-red-400">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="mb-6">
                         <button type="submit"
