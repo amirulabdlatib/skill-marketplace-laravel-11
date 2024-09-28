@@ -11,6 +11,7 @@
 
 <body>
   @include('components.navbar')
+  @include('components.alert')
     <main>
         {{ $slot }}
     </main>

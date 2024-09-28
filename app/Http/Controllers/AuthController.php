@@ -35,10 +35,10 @@ class AuthController extends Controller
         $request->session()->regenerate();
 
         if ($user->role == 'recruiter') {
-            return redirect()->route('recruiter.dashboard');
+            return redirect()->route('recruiter.dashboard')->with('success','Successfully register');
         }
 
-        return redirect()->route('talent.dashboard');
+        return redirect()->route('talent.dashboard')->with('success','Successfully register');
     }
 
     public function doLogin(Request $request)
@@ -54,12 +54,12 @@ class AuthController extends Controller
             $user = Auth::user();
     
             if ($user->role == 'recruiter') {
-                return redirect()->route('recruiter.dashboard');
+                return redirect()->route('recruiter.dashboard')->with('success','Successfully login');
             }
-            return redirect()->route('talent.dashboard');
+            return redirect()->route('talent.dashboard')->with('success','Successfully login');
         }
     
-        return back();
+        return back()->with('error','Invalid credentials!');
     }
 
     public function doLogout(Request $request)
@@ -68,6 +68,6 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->route('landing');
+        return redirect()->route('landing')->with('success','Logout successfully');
     }
 }
