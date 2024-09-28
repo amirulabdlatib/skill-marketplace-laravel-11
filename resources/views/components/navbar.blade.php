@@ -1,7 +1,7 @@
-<header class="relative flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-3 ">
+<header class="relative flex flex-wrap sm:justify-start sm:flex-nowrap w-full text-sm py-3 bg-red-500">
     <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between">
         <div class="flex items-center justify-between">
-            <a class="flex-none text-xl font-semibold text-pink-500 focus:outline-none focus:opacity-80 " href="/"
+            <a class="flex-none text-xl font-semibold text-white focus:outline-none focus:opacity-80 " href="/"
                 aria-label="Brand">
                 SkillBridge
             </a>
@@ -31,9 +31,9 @@
             class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block"
             aria-labelledby="hs-navbar-example-collapse">
             <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-                <a class="font-medium text-gray-500 hover:text-blue-400  focus:outline-none"
+                <a class="font-medium text-white hover:text-blue-400  focus:outline-none"
                     href="{{ route('login.page') }}" aria-current="page">Login</a>
-                <a class="font-medium text-gray-600 hover:text-blue-400 focus:outline-none focus:text-gray-400"
+                <a class="font-medium text-white hover:text-blue-400 focus:outline-none focus:text-gray-400"
                     href="{{ route('register.page') }}"">Register</a>
             </div>
         </div>
