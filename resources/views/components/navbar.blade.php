@@ -31,10 +31,10 @@
             class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block"
             aria-labelledby="hs-navbar-example-collapse">
             <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-                <a class="font-medium text-gray-500 hover:text-blue-400  focus:outline-none" href="#"
-                    aria-current="page">Login</a>
+                <a class="font-medium text-gray-500 hover:text-blue-400  focus:outline-none"
+                    href="{{ route('login.page') }}" aria-current="page">Login</a>
                 <a class="font-medium text-gray-600 hover:text-blue-400 focus:outline-none focus:text-gray-400"
-                    href="#">Register</a>
+                    href="{{ route('register.page') }}"">Register</a>
             </div>
         </div>
     </nav>
